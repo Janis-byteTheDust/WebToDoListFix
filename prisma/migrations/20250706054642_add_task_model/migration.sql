@@ -1,0 +1,19 @@
+/*
+  Warnings:
+
+  - You are about to drop the `task` table. If the table is not empty, all the data it contains will be lost.
+
+*/
+-- DropTable
+PRAGMA foreign_keys=off;
+DROP TABLE "task";
+PRAGMA foreign_keys=on;
+
+-- CreateTable
+CREATE TABLE "Task" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "text" TEXT NOT NULL,
+    "difficulty" TEXT NOT NULL,
+    "image" TEXT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
